@@ -37,7 +37,7 @@ def return_a_detail(grabbed_detail, value):
 
 while True:
     column = input('What is being searched?: ')
-    if column == '': break
+    if column or column.isspace() == '': break
     from_id = input('What record number?: ')
-    if from_id == '': break
+    if from_id or from_id.isspace() == '': break
     if column and from_id: return_a_detail(column, from_id)
