@@ -1,18 +1,18 @@
 from orator.migrations import Migration
 
 
-class UpdateUserTable(Migration):
+class AddColumnToPracticeData(Migration):
 
     def up(self):
         """
         Run the migrations.
         """
         with self.schema.table('practice_data') as table:
-            table.rename_column('namef', 'first')
-            table.rename_column('namel', 'last')
+            table.integer('age').unsigned().nullable()
 
     def down(self):
         """
         Revert the migrations.
         """
-        self.schema.drop('practice_data')
+        with self.schema.table('practice_data') as table:
+            table.drop_column('age')
