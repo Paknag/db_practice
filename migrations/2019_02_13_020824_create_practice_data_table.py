@@ -8,11 +8,10 @@ class CreatePracticeDataTable(Migration):
         Run the migrations.
         """
         with self.schema.create('practice_data') as table:
-            ts = table.string
             table.increments('id')
-            ts('namef')
-            ts('namel')
-            ts('note')
+            table.string('namef')
+            table.string('namel')
+            table.string('note')
             table.timestamps()
 
     def down(self):

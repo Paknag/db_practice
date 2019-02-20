@@ -1,10 +1,8 @@
 from models.practice_datum import PracticeData
-from db import DATABASES
-from orator import DatabaseManager, Model
+import helpers
 
+helpers.connect_db()
 
-db = DatabaseManager(DATABASES)
-Model.set_connection_resolver(db)
 user_table_headers = PracticeData().find(1)._attributes
 
 def return_a_detail(grabbed_detail, value):
