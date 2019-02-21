@@ -3,6 +3,7 @@ import helpers
 
 helpers.connect_db()
 
+# When creating a record, all non-nullable fields need to be filled
 # pd = PracticeData()
 # pd.namef = 'will'
 # pd.namel = 'dove'
